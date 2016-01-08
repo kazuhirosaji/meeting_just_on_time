@@ -16,12 +16,11 @@
   "background": {
     "scripts": ["js/background.js"],
     "css": ["css/contents_style.css"]
-<<<<<<< HEAD
-  }
-=======
   // "page": "background.html"
     },
   "permissions":["notifications"],
   "content_security_policy": "img-src 'self' http://www.google.com/favicon.ico; object-src 'self'; script-src 'self'"
->>>>>>> c46b1f5f5e1a39fcedb28ceb07e1c19832aa543f
+  },
+  "background_page": "background.html",
+  "permissions":["notifications"]
 }
