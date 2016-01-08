@@ -19,7 +19,8 @@ $(function() {
 			//var hour = date.getHours();
 			//var min = date.getMinutes();
 
-			var timestmp = parseInt( new Date().getTime() / 1000);
+			var timestmp = parseInt( (new Date().getTime() - Date().getTimezoneOffset()) / 1000);
+
 			var end_time = parseInt( new Date(""+data["result"][0].date +"/"+ data["result"][0].end +":00") / 1000);
 
 			//var end_date = new Date();
