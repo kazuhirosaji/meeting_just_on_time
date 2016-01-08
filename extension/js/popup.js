@@ -13,19 +13,20 @@ $(function() {
 		}
 		setInterval( function(){
 			// 現在日時
-			var date = new Date();
+			//var date = new Date();
 			// 現在時刻
 			//var time = new Date( getTime ).toLocaleTimeString();
 			//var hour = date.getHours();
 			//var min = date.getMinutes();
 
-			//parseInt( new Date() / 1000 )//
+			var timestmp = parseInt( new Date().getTime() / 1000);
+			var end_time = parseInt( new Date(""+data["result"][0].date +"/"+ data["result"][0].end +":00") / 1000);
 
-			//var end_date = new Date()
-			$("#time").text(date);
+			//var end_date = new Date();
+			//何故か6時間くらいずれる
+			$("#time").text(new Date((end_time - timestmp)*1000).toLocaleTimeString());
 
 		}, 1000);
-
 
 		for(var i = 0; i < len; i++) {
 			if (data["result"][i].type == 1) {
