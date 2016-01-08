@@ -9,7 +9,7 @@
 
 <body>
 <h2>MTG詳細</h2>
-<form id="row1">
+<form id="row0">
   <input type="hidden" name="type" value="1">
   ID:<input type="text" name="id">
   タイトル:<input type="text" name="title">
