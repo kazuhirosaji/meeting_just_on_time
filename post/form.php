@@ -1,5 +1,4 @@
-<?
-     $MAX_AGENDAS = 5;
+<? php     $MAX_AGENDAS = 5;
      $MAX_ATTENDS = 10;
 ?>
 <html>
@@ -19,21 +18,21 @@
 </form>
 
 <h2>アジェンダ</h2>
-<? for($i = 1; $i < 1 + $MAX_AGENDAS; $i ++): ?>
-<form id="row<?= $i ?>">
+<? php for($i = 1; $i < 1 + $MAX_AGENDAS; $i ++): ?>
+<form id="row<? php= $i ?>">
   <input type="hidden" name="type" value="2">
   議題:<input type="text" name="agenda">
   所用時間(分):<input type="number" name="time">
-</form>   
-<? endfor; ?>
+</form>
+<? php endfor; ?>
 
 <h2>参加者</h2>
-<? for(; $i < 1 + $MAX_AGENDAS + $MAX_ATTENDS; $i ++): ?>
-<form id="row<?= $i ?>">
+<? php for(; $i < 1 + $MAX_AGENDAS + $MAX_ATTENDS; $i ++): ?>
+<form id="row<? php= $i ?>">
   <input type="hidden" name="type" value="3">
   名前:<input type="text" name="name">
 </form>
-<? endfor; ?>
+<? php endfor; ?>
 
 <button id="submit">submit</button>
 
