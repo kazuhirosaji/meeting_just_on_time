@@ -10,13 +10,14 @@
   },
   "browser_action": {
     "default_icon": "images/sample_16.png",
-    "default_title": "Meeting on just time",
+    "default_title": "Meeting just on time",
     "default_popup": "main.html"
   },
   "background": {
-    //"scripts": ["js/background.js"],
+    "scripts": ["js/background.js"],
     "css": ["css/contents_style.css"]
-  },
-  "background_page": "background.html",
+  // "page": "background.html"
+    },
   "permissions":["notifications"],
+  "content_security_policy": "img-src 'self' http://www.google.com/favicon.ico; object-src 'self'; script-src 'self'"
 }
