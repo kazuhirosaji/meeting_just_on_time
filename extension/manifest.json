@@ -16,5 +16,7 @@
   "background": {
     //"scripts": ["js/background.js"],
     "css": ["css/contents_style.css"]
-  }
+  },
+  "background_page": "background.html",
+  "permissions":["notifications"],
 }
