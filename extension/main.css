@@ -1,6 +1,39 @@
 body {
-	background-color: #ffff00;
+	background-color: #fffafa;
 	font-size: 100.01%;
 	width: 420px;
 	height: 680px;
+}
+
+#appelation{
+
+}
+
+#title {
+    background-color: #fffafa;
+    font-size: 100.01%;
+    width: 420px;
+    height: 30px;
+}
+
+#time {
+    background-color: #000080;
+    font-size: 200.01%;
+    width: 420px;
+    height: 50px;
+    text-align:  : center;
+}
+
+#agenda {
+    background-color: #fffafa;
+    font-size: 100.01%;
+    width: 420px;
+    height: 150px;
+}
+
+#member {
+    background-color: #fffafa;
+    font-size: 100.01%;
+    width: 420px;
+    height: 100px;
 }
