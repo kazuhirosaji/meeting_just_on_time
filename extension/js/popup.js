@@ -42,7 +42,7 @@ $(function() {
 				var result_id = data["result"][i].id;
 			}
 			if (data["result"][i].type == 3) {
-				member.append($("<li>").attr({"id":"name" + i}).text(data["result"][i].name));
+				member.append($("<li>").attr({"class":result_id}).attr({"id":"name" + i}).text(data["result"][i].name));
 				$("#name" + i).on("click", function(e){
 					sendToSpreadSheet($(this));
 				});;
