@@ -13,9 +13,9 @@
   <input type="hidden" name="type" value="1">
   ID:<input type="text" name="id">
   タイトル:<input type="text" name="title">
-  日付:<input type="text" name="date">
-  開始時間:<input type="text" name="start">
-  終了時間:<input type="text" name="end">
+  日付:<input type="date" name="date">
+  開始時間:<input type="time" name="start" value="00:00">
+  終了時間:<input type="time" name="end" value="00:00">
 </form>
 
 <h2>アジェンダ</h2>
@@ -23,7 +23,7 @@
 <form id="row<?= $i ?>">
   <input type="hidden" name="type" value="2">
   議題:<input type="text" name="agenda">
-  所用時間(分):<input type="text" name="time">
+  所用時間(分):<input type="number" name="time">
 </form>   
 <? endfor; ?>
 

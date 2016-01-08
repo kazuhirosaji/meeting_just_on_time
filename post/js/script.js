@@ -1,5 +1,5 @@
-var loop = 1;
-var MAX_LOOP = 16;
+var loop = 0;
+var MAX_LOOP = 15;
 
 // jQuery snippet for changing HTML from into JSON
 (function ($) {
