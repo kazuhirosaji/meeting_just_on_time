@@ -1,4 +1,4 @@
 ./extension.crx
 ./extension.pem
-./extensions/js/jquery.min.js
-./extensions/js/key.js
+./extension/js/jquery.min.js
+./extension/js/key.js
