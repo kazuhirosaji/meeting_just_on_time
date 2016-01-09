@@ -110,14 +110,14 @@ var sendToSpreadSheet = function(li) {
         data: data,
         dataType: 'json',
         type: 'POST',
-        
+
         // place for handling successful response
         // showing (redirecting to) something like /thanks.html
         //page could be a good idea
         success: function(data) {
             console.log(data);
         },
-        
+
         // handling error response
         error: function(data) {
             console.log(data);

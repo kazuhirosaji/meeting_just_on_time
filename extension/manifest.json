@@ -2,7 +2,7 @@
   "name": "会議なう",
   "version": "1",
   "manifest_version": 2,
-  "description": "meeting just on time!",
+  "description": "会議のアジェンダ，残り時間，参加メンバーを表示します．ワンクリックで確認！",
   "icons": {
     "16" : "images/sample_16.png",
     "48" : "images/sample_48.png",
