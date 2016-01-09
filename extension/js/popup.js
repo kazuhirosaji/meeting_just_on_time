@@ -100,7 +100,21 @@ var checkDelay = function(start_times) {
 	}
 }
 
+var setNotification = function() {
+	chrome.runtime.sendMessage({
+	    type: "start"
+	  },
+	  function (response) {
+	    if (response) {
+	    	console.log(response);
+	    }
+	  }
+	);
+}
+
 var sendToSpreadSheet = function(li) {
+	setTimeout(setNotification, 10000);
+
 	var date = new Date();
 	attend_hour = date.getHours();
 	attend_min = date.getMinutes();
