@@ -1,39 +1,39 @@
 body {
-	background-color: #fffafa;
+	background-color: #ffc0cb;
 	font-size: 100.01%;
 	width: 420px;
-	height: 680px;
+	height: auto;
 }
 
 #appelation{
-
+    background-color: #ffc0cb;
 }
 
 #title {
-    background-color: #fffafa;
+    background-color: #fff;
     font-size: 100.01%;
-    width: 420px;
+    width: auto;
     height: 30px;
 }
 
 #time {
-    background-color: #fffafa;
+    background-color: #fff;
     font-size: 200.01%;
-    width: 420px;
+    width: auto;
     height: 50px;
     text-align: center;
 }
 
 #agenda {
-    background-color: #fffafa;
+    background-color: #fff;
     font-size: 100.01%;
-    width: 420px;
-    height: 150px;
+    width: auto;
+    height: auto;
 }
 
 #member {
-    background-color: #fffafa;
+    background-color: #fff;
     font-size: 100.01%;
-    width: 420px;
-    height: 100px;
+    width: auto;
+    height: auto;
 }
