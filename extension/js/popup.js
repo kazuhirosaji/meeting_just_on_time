@@ -3,6 +3,7 @@ $(function() {
 		var title = $("#title");
 		var agenda = $("#agenda");
 		var member = $("#member");
+		var start_time = '00:00';
 
 		var len = data["result"].length;
 
@@ -25,6 +26,8 @@ $(function() {
 		for(var i = 0; i < len; i++) {
 			if (data["result"][i].type == 1) {
 				var result_id = data["result"][i].id;
+				start_time = data["result"][i].start;
+				start_times = start_time.split(":");
 			}
 			if (data["result"][i].type == 2 && data["result"][i].agenda != null) {
 				agenda.append($("<li>").attr({"class":result_id}).text(data["result"][i].agenda));
@@ -53,7 +56,8 @@ $(function() {
 				if ($.inArray("name" + i, attender_ids) >= 0) {
 					$("#name" + i).append('<span style="margin-left:20px;">'+ data["result"][attend_indexes["name" + i]].attend + ' 参加</span>');
 				} else {
-					$("#name" + i).append('<span style="margin-left:20px;">まだ参加していません</span>');
+					msg = checkDelay(start_times);
+					$("#name" + i).append('<span style="margin-left:20px;">' + msg + '</span>');
 					$("#name" + i).on("click", function(e){
 						sendToSpreadSheet($(this));
 					});;
@@ -64,6 +68,27 @@ $(function() {
 	});
 
 });
+
+var checkDelay = function(start_times) {
+	var date = new Date();
+	now_hour = date.getHours();
+	now_min = date.getMinutes();
+
+
+	start_time = Number(start_times[0]) * 60 + Number(start_times[1]);
+	now = Number(now_hour) * 60 + Number(now_min);
+
+	console.log(start_times);
+	console.log(start_time);
+	console.log(now);
+
+	delay = now - start_time;
+	if (delay > 0) {
+		return delay + '分の遅れです';	
+	} else {
+		return 'まだ参加していません';
+	}
+}
 
 var sendToSpreadSheet = function(li) {
 	var date = new Date();
