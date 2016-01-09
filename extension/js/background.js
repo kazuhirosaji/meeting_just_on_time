@@ -40,8 +40,8 @@ chrome.runtime.onMessage.addListener(
     case "start":
         var opt1 = {
             type: 'basic',
-            title: 'この議題はあと３分で終了する予定です',
-            message: 'この議題はあと３分で終了する予定です',
+            title: '新しいメンバーが参加しました',
+            message: '会議を始めましょう',
             iconUrl: "images/sample_128.png"
         }
         chrome.notifications.create("", opt1, function(id){  console.log("Last error:", chrome.runtime.lastError); });

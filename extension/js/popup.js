@@ -113,7 +113,7 @@ var setNotification = function() {
 }
 
 var sendToSpreadSheet = function(li) {
-	setTimeout(setNotification, 10000);
+	setTimeout(setNotification, 1000);
 
 	var date = new Date();
 	attend_hour = date.getHours();
