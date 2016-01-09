@@ -12,12 +12,6 @@ $(function() {
 			}
 		}
 		setInterval( function(){
-			// 現在日時
-			//var date = new Date();
-			// 現在時刻
-			//var time = new Date( getTime ).toLocaleTimeString();
-			//var hour = date.getHours();
-			//var min = date.getMinutes();
 
 			var timestmp = parseInt( (new Date().getTime() - (new Date()).getTimezoneOffset()*60*1000)/ 1000);
 			var end_time = parseInt( (new Date( data["result"][0].date +"/"+ data["result"][0].end +":00")).getTime()/ 1000);
@@ -41,27 +35,43 @@ $(function() {
 			if (data["result"][i].type == 1) {
 				var result_id = data["result"][i].id;
 			}
-			if (data["result"][i].type == 3) {
-				member.append($("<li>").attr({"class":result_id}).attr({"id":"name" + i}).text(data["result"][i].name));
-				$("#name" + i).on("click", function(e){
-					sendToSpreadSheet($(this));
-				});;
-			}
 		}
+
+		var attender_ids = [];
+		var attend_indexes = {};
 
 		for(var i = 0; i < len; i++) {
 			if (data["result"][i].type == 4) {
-				$("#" + data["result"][i].name_id).append('<span style="margin-left:20px;">参加</span>');
+				id = data["result"][i].name_id;
+				attender_ids.push(id);
+				attend_indexes[id] = i;
 			}
 		}
-
+		for(var i = 0; i < len; i++) {
+			if (data["result"][i].type == 3) {
+				member.append($("<li>").attr({"class":result_id}).attr({"id":"name" + i}).text(data["result"][i].name));
+				if ($.inArray("name" + i, attender_ids) >= 0) {
+					$("#name" + i).append('<span style="margin-left:20px;">'+ data["result"][attend_indexes["name" + i]].attend + ' 参加</span>');
+				} else {
+					$("#name" + i).append('<span style="margin-left:20px;">まだ参加していません</span>');
+					$("#name" + i).on("click", function(e){
+						sendToSpreadSheet($(this));
+					});;
+				}
+			}
+		}
 
 	});
 
 });
 
 var sendToSpreadSheet = function(li) {
-	data = {type: "4", name: li.text(), attend:"10:11", name_id: li.attr('id')};
+	var date = new Date();
+	attend_hour = date.getHours();
+	attend_min = date.getMinutes();
+	nowtime = attend_hour + ":" + attend_min;
+
+	data = {type: "4", name: li.text(), attend: nowtime, name_id: li.attr('id')};
 	console.log(data);
 
     $.ajax({
