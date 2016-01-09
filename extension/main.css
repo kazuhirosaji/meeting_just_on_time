@@ -18,10 +18,11 @@ body {
 
 #time {
     background-color: #fff;
-    font-size: 200.01%;
+    font-size: 300.01%;
     width: auto;
     height: 50px;
     text-align: center;
+
 }
 
 #agenda {
