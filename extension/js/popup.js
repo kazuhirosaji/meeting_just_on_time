@@ -58,6 +58,7 @@ $(function() {
 				} else {
 					msg = checkDelay(start_times);
 					$("#name" + i).append('<span style="margin-left:20px;">' + msg + '</span>');
+
 					$("#name" + i).on("click", function(e){
 						sendToSpreadSheet($(this));
 					    messages = $(this).context.innerText.split(" ");
@@ -65,6 +66,9 @@ $(function() {
 						var date = new Date();
 						now_hour = date.getHours();
 						now_min = date.getMinutes();
+						if (now_min < 10) {
+							now_min = '0' + now_min;
+						}
 						$(this).context.innerText = messages[0] + " " + now_hour + ":" + now_min + " 参加";
 					});;
 				}
